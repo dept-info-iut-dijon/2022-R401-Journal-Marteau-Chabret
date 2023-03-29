@@ -1,4 +1,6 @@
-﻿namespace Diary.Data
+﻿using LogicLayer;
+
+namespace Diary.Data
 {
     public class DiaryDao
     {
