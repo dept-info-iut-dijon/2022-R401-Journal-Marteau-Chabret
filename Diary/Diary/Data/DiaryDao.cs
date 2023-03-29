@@ -21,9 +21,9 @@ namespace Diary.Data
         /// </summary>
         /// <param name="user">utilisateur souhaité</param>
         /// <returns>son journal</returns>
-        public Diary Read(User user)
+        public LogicLayer.Diary Read(User user)
         {
-
+            return null;
         }
 
         /// <summary>
