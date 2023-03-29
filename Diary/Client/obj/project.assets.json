@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "LogicLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LogicLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogicLayer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "LogicLayer/1.0.0": {
+      "type": "project",
+      "path": "../LogicLayer/LogicLayer.csproj",
+      "msbuildProject": "../LogicLayer/LogicLayer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "LogicLayer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Damien\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj": {
+              "projectPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

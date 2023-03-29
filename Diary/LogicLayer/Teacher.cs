@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LogicLayer
 {
-    public class Teacher
+    public class Teacher : User
     {
+        private List<Student> students;
     }
 }
