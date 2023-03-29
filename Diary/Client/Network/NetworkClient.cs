@@ -9,17 +9,17 @@ namespace Client.Network
 {
     public class NetworkClient : INetworkClientcs
     {
-        public void AddEntry(Entry newEntry)
+        public void AddEntry(string newEntry)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Diary> GetDiary(Student user)
+        public Task<string> GetDiary(string user)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Categories> ReadCategories()
+        public void ReadCategories()
         {
             throw new NotImplementedException();
         }
