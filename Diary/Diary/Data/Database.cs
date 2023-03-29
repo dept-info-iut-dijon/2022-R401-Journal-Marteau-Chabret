@@ -4,8 +4,13 @@ namespace Diary.Data
 {
     public class Database
     {
-        // Représente la connection au serveur sql
+        
         private MySqlConnection connection;
+
+        /// <summary>
+        /// Représente la connection au serveur bdd
+        /// </summary>
+        public MySqlConnection Connection { get { return connection; } }
 
         /// <summary>
         /// Constructeur de la classe qui initialise la connection au serveur
