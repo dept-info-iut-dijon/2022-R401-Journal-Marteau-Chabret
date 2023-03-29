@@ -452,6 +452,16 @@
             "rid": "win"
           }
         }
+      },
+      "LogicLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LogicLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogicLayer.dll": {}
+        }
       }
     }
   },
@@ -1628,10 +1638,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "LogicLayer/1.0.0": {
+      "type": "project",
+      "path": "../LogicLayer/LogicLayer.csproj",
+      "msbuildProject": "../LogicLayer/LogicLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "LogicLayer >= 1.0.0",
       "MySql.Data >= 8.0.32.1",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -1662,7 +1678,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj": {
+              "projectPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
