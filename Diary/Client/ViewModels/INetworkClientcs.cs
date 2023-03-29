@@ -9,6 +9,7 @@ namespace Client.ViewModels
     public interface INetworkClientcs
     {
         public Task<Diary> GetDiary(Student user);
+
         public Task<Categories> ReadCategories();
 
         public void AddEntry(Entry newEntry);
