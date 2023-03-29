@@ -21,10 +21,11 @@ namespace Client
     /// </summary>
     public partial class DiaryWindow : Window
     {
-        public DiaryWindow(Student user, INetworkClient network)
+        public DiaryWindow(User user, INetworkClient network)
         {
             InitializeComponent();
             INetworkClient networkClient = network;
+            this.DataContext = new DiaryViewModel(user, networkClient);
         }
     }
 }
