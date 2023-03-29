@@ -13,6 +13,7 @@ namespace LogicLayer
     {
         private int id;
         private List<Entry> entries;
+        private Student owner;
 
         /// <summary>
         /// ID du journal
@@ -32,6 +33,17 @@ namespace LogicLayer
         {
             this.id = id;
             this.entries = new List<Entry>();
+        }
+
+        /// <summary>
+        /// Constructeur naturelle
+        /// </summary>
+        /// <param name="id"> id </param>
+        /// <param name="student"> étudiant auquel appartient le journal </param>
+        public Diary(int id, Student student)
+        {
+            this.id = id;
+            this.owner = student;
         }
 
         /// <summary>

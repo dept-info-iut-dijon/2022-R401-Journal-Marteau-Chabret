@@ -10,7 +10,7 @@ namespace Client.ViewModels
     /// <summary>
     /// Base
     /// </summary>
-    internal class BaseVM : INotifyPropertyChanged
+    public class BaseVM : INotifyPropertyChanged
     {
         #region INOTIFY
         public event PropertyChangedEventHandler? PropertyChanged;

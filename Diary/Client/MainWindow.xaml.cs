@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Client.Network;
+using LogicLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,30 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        private User userConnected;
         public MainWindow()
         {
             InitializeComponent();
+
+            // User
+            userConnected = new User();
+            userConnected.Id = 1;
+            userConnected.Login = "dc393609";
+            userConnected.Password = "non";
+            userConnected.Name = "Damien";
+
+
+        }
+
+        private void Boutton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenDiaryWindow(object sender, RoutedEventArgs e)
+        {
+            DiaryWindow win = new DiaryWindow(userConnected, new FakeNetwork());
+            win.Show();
         }
     }
 }
