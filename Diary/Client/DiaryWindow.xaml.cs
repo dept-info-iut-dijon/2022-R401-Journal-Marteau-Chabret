@@ -25,7 +25,8 @@ namespace Client
         {
             InitializeComponent();
             INetworkClient networkClient = network;
-            this.DataContext = new DiaryViewModel(user, networkClient);
+            DiaryViewModel d = new DiaryViewModel(user, networkClient);
+            this.DataContext = d;
         }
     }
 }

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Boutton" Content="Ouvrir DiaryWindow" Click="OpenDiaryWindow"/>
+        <Button x:Name="Boutton" Content="Ouvrir DiaryWindow" Click="OpenDiaryWindow" Margin="241,146,241,156"/>
     </Grid>
 </Window>

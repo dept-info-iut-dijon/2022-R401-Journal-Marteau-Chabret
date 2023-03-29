@@ -7,15 +7,27 @@ using System.Threading.Tasks;
 
 namespace Client.ViewModels
 {
+    /// <summary>
+    /// Journal vue model
+    /// </summary>
     public class DiaryViewModel : BaseVM
     {
-        #region Association
+        
         private EntryViewModel current;
         private Diary model;
         private List<EntryViewModel> items;
         private List<CategoryViewModel> categories;
         private User userConnectd;
         private INetworkClient network;
+
+        /// <summary>
+        /// Journal 
+        /// </summary>
+        public Diary Model
+        {
+            get => model;
+            set => model = value;
+        }
 
         /// <summary>
         /// Liste d'items
@@ -34,7 +46,7 @@ namespace Client.ViewModels
             get => categories;
             set => categories = value;  
         }
-        #endregion
+       
 
         /// <summary>
         /// Constructeur naturelle
