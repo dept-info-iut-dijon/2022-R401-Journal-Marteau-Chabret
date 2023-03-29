@@ -1,4 +1,5 @@
-﻿using LogicLayer;
+﻿using Client.ViewModels;
+using LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +12,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour DiaryWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DiaryWindow : Window
     {
-        private User user;
-        public MainWindow()
+        public DiaryWindow(Student user, INetworkClient network)
         {
             InitializeComponent();
-
-            // User
-            user = new User();
-            user.Id = 1;
-            user.Login = "dc393609";
-            user.Password = "non";
-            user.Name = "Damien";
-
-
+            INetworkClient networkClient = network;
         }
     }
 }

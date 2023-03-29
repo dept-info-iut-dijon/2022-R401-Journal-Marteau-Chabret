@@ -7,6 +7,7 @@
     {
         private int id;
         private List<Entry> entries;
+        private Student owner;
 
         /// <summary>
         /// ID du journal
@@ -25,6 +26,17 @@
         public Diary(int id)
         {
             this.id = id;
+        }
+
+        /// <summary>
+        /// Constructeur naturelle
+        /// </summary>
+        /// <param name="id"> id </param>
+        /// <param name="student"> étudiant auquel appartient le journal </param>
+        public Diary(int id, Student student)
+        {
+            this.id = id;
+            this.owner = student;
         }
 
         /// <summary>

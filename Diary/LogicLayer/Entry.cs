@@ -14,7 +14,7 @@ namespace LogicLayer
         private DateTime date;
         private string title;
         private string description;
-        private int IDiary;
+        private int iDiary;
 
         /// <summary>
         /// Représente la date de l'entry
@@ -34,6 +34,11 @@ namespace LogicLayer
         /// <summary>
         /// Représente le int de l'entry
         /// </summary>
-        public int IDiary1 { get => IDiary; set => IDiary = value; }
+        public int IDiary { get => iDiary; set => iDiary = value; }
+
+        /// <summary>
+        /// Catégorie de l'entrée
+        /// </summary>
+        public Category Category { get => category; set => category = value; }
     }
 }
