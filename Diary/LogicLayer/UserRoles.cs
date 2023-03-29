@@ -8,5 +8,8 @@ namespace LogicLayer
 {
     public enum UserRoles
     {
+        STUDENT,
+        TEACHER, 
+        ADMIN
     }
 }

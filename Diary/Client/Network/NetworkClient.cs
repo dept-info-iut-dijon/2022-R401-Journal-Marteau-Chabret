@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client.Network
 {
-    public class NetworkClient : INetworkClientcs
+    public class NetworkClient : INetworkClient
     {
         public void AddEntry(string newEntry)
         {
