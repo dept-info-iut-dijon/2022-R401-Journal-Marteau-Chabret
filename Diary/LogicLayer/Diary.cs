@@ -31,6 +31,7 @@ namespace LogicLayer
         public Diary(int id)
         {
             this.id = id;
+            this.entries = new List<Entry>();
         }
 
         /// <summary>
