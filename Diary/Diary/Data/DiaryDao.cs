@@ -48,6 +48,8 @@ namespace Diary.Data
                 entry.Title = reader["title"].ToString();
                 entry.Date = Convert.ToDateTime(reader["date"]);
                 entry.IDiary1 = Convert.ToInt32(reader["IDDiary"]);
+                Category c = new Category(reader["name"].ToString(), Convert.ToInt32(reader["color"]));
+                entry.Category = c;
                 diary.Id = entry.IDiary1;
                 diary.Add(entry);
             }
