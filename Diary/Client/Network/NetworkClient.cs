@@ -1,4 +1,5 @@
 ﻿using Client.ViewModels;
+using LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,17 @@ namespace Client.Network
 {
     public class NetworkClient : INetworkClient
     {
-        public void AddEntry(string newEntry)
+        public void AddEntry(Entry newEntry)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> GetDiary(string user)
+        public async Task<Diary> GetDiary(Student user)
         {
             throw new NotImplementedException();
         }
 
-        public void ReadCategories()
+        public async Task<Categories> ReadCategories()
         {
             throw new NotImplementedException();
         }
