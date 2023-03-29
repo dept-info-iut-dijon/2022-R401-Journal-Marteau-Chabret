@@ -17,7 +17,7 @@ namespace Client.ViewModels
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public Task<Diary> GetDiary(Student user);
+        public Task<Diary> GetDiary(User user);
 
         /// <summary>
         /// Lis les catégories

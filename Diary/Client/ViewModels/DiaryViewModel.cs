@@ -1,6 +1,7 @@
 ﻿using LogicLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,8 @@ namespace Client.ViewModels
         
         private EntryViewModel current;
         private Diary model;
-        private List<EntryViewModel> items;
+        private ObservableCollection<EntryViewModel> items;
         private List<CategoryViewModel> categories;
-        private User userConnectd;
-        private INetworkClient network;
 
         /// <summary>
         /// Journal 
@@ -32,7 +31,7 @@ namespace Client.ViewModels
         /// <summary>
         /// Liste d'items
         /// </summary>
-        public List<EntryViewModel> Items
+        public ObservableCollection<EntryViewModel> Items
         {
             get => items;
             set => items = value;   
@@ -53,10 +52,16 @@ namespace Client.ViewModels
         /// </summary>
         /// <param name="user"> Utilisateur qui se connecte </param>
         /// <param name="network"> Network </param>
-        public DiaryViewModel(User user, INetworkClient network)
+        public DiaryViewModel(Diary model)
         {
-            this.userConnectd = user;
-            this.network = network;
+
+            this.model = model;
+
+            Items = new ObservableCollection<EntryViewModel>();
+            foreach(Entry e in model.Entries)
+            {
+                Items.Add(new EntryViewModel(e));
+            }
         }
 
         /// <summary>

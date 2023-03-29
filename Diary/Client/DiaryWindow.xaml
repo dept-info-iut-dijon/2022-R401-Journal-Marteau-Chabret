@@ -18,7 +18,7 @@
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Diary entries :" VerticalAlignment="Bottom"/>
-            <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding Entries}" SelectedItem="{Binding CurrentEntry}" HorizontalContentAlignment="Stretch" >
+            <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding Items}" SelectedItem="{Binding CurrentEntry}" HorizontalContentAlignment="Stretch" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>

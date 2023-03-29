@@ -18,9 +18,9 @@ namespace Client.Network
             throw new NotImplementedException();
         }
 
-        public async Task<Diary> GetDiary(Student user)
+        public async Task<Diary> GetDiary(User user)
         {
-            Diary diary = new Diary(99, user);
+            Diary diary = new Diary(99, user as Student);
             Entry entry = new Entry();
             entry.IDiary = diary.Id;
             entry.Description = "test du journal";
