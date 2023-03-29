@@ -8,5 +8,22 @@ namespace LogicLayer
 {
     public class Categories
     {
+
+        private List<Category> categories;
+
+        /// <summary>
+        /// Représente les différentes catégories
+        /// </summary>
+        public List<Category> ListCategories { get => categories; set => categories = value; }
+    
+    
+        /// <summary>
+        /// Permet d'ajouter une catégorie à la liste
+        /// </summary>
+        /// <param name="c">nouvelle catégorie</param>
+        public void Add(Category c)
+        {
+            categories.Add(c);
+        }
     }
 }
