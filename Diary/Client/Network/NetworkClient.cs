@@ -15,12 +15,12 @@ namespace Client.Network
             throw new NotImplementedException();
         }
 
-        public async Task<Diary> GetDiary(Student user)
+        public Task<Diary> GetDiary(User user)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Categories> ReadCategories()
+        public Task<Categories> ReadCategories()
         {
             throw new NotImplementedException();
         }

@@ -24,8 +24,14 @@ namespace Client
         public DiaryWindow(User user, INetworkClient network)
         {
             InitializeComponent();
-            INetworkClient networkClient = network;
-            DiaryViewModel d = new DiaryViewModel(user, networkClient);
+            this.Init(user, network);
+           
+        }
+
+        private async void Init(User student, INetworkClient net)
+        {
+            Diary model = await net.GetDiary(student);
+            DiaryViewModel d = new DiaryViewModel(model);
             this.DataContext = d;
         }
     }

@@ -44,6 +44,7 @@ namespace LogicLayer
         {
             this.id = id;
             this.owner = student;
+            this.entries = new List<Entry>();
         }
 
         /// <summary>
@@ -53,6 +54,11 @@ namespace LogicLayer
         public void Add(Entry entry)
         {
             entries.Add(entry);
+        }
+
+        public override string ToString()
+        {
+            return "";
         }
     }
 }
