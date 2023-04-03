@@ -12,13 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
-      "C:\\Users\\flo21\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\flo21\\.nuget\\packages"
-=======
       "C:\\Users\\Damien\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Damien\\.nuget\\packages"
->>>>>>> e5d43266d213cac18897b34560918e3106dec920
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
