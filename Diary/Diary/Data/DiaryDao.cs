@@ -48,6 +48,8 @@ namespace Diary.Data
                 entry.Title = reader["title"].ToString();
                 entry.Date = Convert.ToDateTime(reader["date"]);
                 entry.IDiary1 = Convert.ToInt32(reader["IDDiary"]);
+                Category c = new Category(reader["name"].ToString(), Convert.ToInt32(reader["color"]));
+                entry.Category = c;
                 diary.Id = entry.IDiary1;
                 diary.Add(entry);
             }
@@ -61,45 +63,7 @@ namespace Diary.Data
         /// <param name="entry">entrée à ajouter</param>
         public void AddEntry(Entry entry)
         {
-            // Ouverture de la bdd
-            this.database.Connection.Open();
 
-            // Recuperation Categorie ID
-
-                // Création de la requête
-                DbCommand command = this.database.Connection.CreateCommand();
-                command.CommandText = $"Select ID from category where name = @nom AND color = @color)";
-
-                // Réglage des parametres
-                DbParameter paramNom = command.CreateParameter();
-                paramNom.DbType = System.Data.DbType.String;
-                paramNom.ParameterName = "@nom";
-                paramNom.Value = entry.Category.Name;
-                DbParameter paramColor = command.CreateParameter();
-                paramColor.DbType = System.Data.DbType.Int32;
-                paramColor.ParameterName = "@color";
-                paramColor.Value = entry.Category.Color;
-
-                command.Parameters.Add(paramColor);
-                command.Parameters.Add(paramNom);
-
-                // Execution de la requête
-                DbDataReader reader = command.ExecuteReader();
-
-                int idCateg = 0;
-                while (reader.Read())
-                {
-                    idCateg = Convert.ToInt32(reader["id"]);
-                }
-
-            /// Ajout entry
-
-            // Création de la requête
-            DbCommand command2 = this.database.Connection.CreateCommand();
-                command2.CommandText = $"Insert into entry values('NULL','{entry.Date}','{entry.Title}','{entry.Description}','{idCateg}')";
-
-                // Execution de la requête
-                command2.ExecuteNonQuery();
         }
     }
 }
