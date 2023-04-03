@@ -36,6 +36,13 @@ namespace LogicLayer
         }
 
         /// <summary>
+        /// Constructeur vide pour récupérer les diaries de l'API
+        /// </summary>
+        public Diary()
+        {
+        }
+
+        /// <summary>
         /// Constructeur naturelle
         /// </summary>
         /// <param name="id"> id </param>

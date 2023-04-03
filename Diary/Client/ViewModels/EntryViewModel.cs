@@ -40,7 +40,16 @@ namespace Client.ViewModels
         /// </summary>
         public Brush CategoryColor 
         { 
-            get => categoryColor; 
+            get 
+            {
+                byte r = (byte)((this.entry.Category.Color & 0xFF0000) >> 16);
+                byte g = (byte)((this.entry.Category.Color & 0x00FF00) >> 8);
+                byte b = (byte)(this.entry.Category.Color & 0x0000FF);
+                System.Windows.Media.Color color = System.Windows.Media.Color.FromArgb(255, r, g, b);
+                Brush brush = new SolidColorBrush(color);
+                return brush; 
+            }
+        
             set => categoryColor = value; 
         }
 

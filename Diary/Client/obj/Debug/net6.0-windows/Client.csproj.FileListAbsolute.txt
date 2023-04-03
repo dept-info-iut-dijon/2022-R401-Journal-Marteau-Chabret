@@ -24,3 +24,30 @@ C:\Users\Damien\Documents\COURS\ArchitectureLogicielle\TP_Journal\Diary\Client\o
 C:\Users\Damien\Documents\COURS\ArchitectureLogicielle\TP_Journal\Diary\Client\obj\Debug\net6.0-windows\Client.pdb
 C:\Users\Damien\Documents\COURS\ArchitectureLogicielle\TP_Journal\Diary\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\Damien\Documents\COURS\ArchitectureLogicielle\TP_Journal\Diary\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\LogicLayer.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\LogicLayer.pdb
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\DiaryWindow.g.cs
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.cache
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.lref
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\DiaryWindow.baml
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.g.resources
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\ref\Client.dll
