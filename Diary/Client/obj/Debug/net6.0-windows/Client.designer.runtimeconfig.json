@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Damien\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\flo21\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\flo21\\.nuget\\packages"
     ],
     "configProperties": {

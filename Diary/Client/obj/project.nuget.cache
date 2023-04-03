@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LNBitFDuDfiHTM6Qi8V+cLY4iiQ2jIlVEg18DHe2DsuDDOsKbPbOY2xvdKYSa9xyMjx7ORfW2ggv0LyAT0jBYQ==",
+  "dgSpecHash": "tBGg3VyPbC/b/hRykOVlWbQPsYVhzaYZ8R+o4zoXBKLRl23OfJgTrCXtzqZ6dQUTFUwXF25QoyIhn66XVL7MDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\Client\\Client.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\Client\\Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\flo21\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

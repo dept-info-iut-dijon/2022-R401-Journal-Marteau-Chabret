@@ -1,8 +1,10 @@
 ﻿using Client.ViewModels;
 using LogicLayer;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,19 +12,58 @@ namespace Client.Network
 {
     public class NetworkClient : INetworkClient
     {
-        public void AddEntry(Entry newEntry)
+        public async void AddEntry(Entry newEntry)
         {
-            throw new NotImplementedException();
+            // Configuration de l'endpoint
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+
+            // Envoie de la requête
+            await client.PostAsync("", new StringContent(JsonConvert.SerializeObject(newEntry)));
         }
 
-        public Task<Diary> GetDiary(User user)
+        public async Task<Diary> GetDiary(User user)
         {
-            throw new NotImplementedException();
+            Diary d = null;
+
+            // Configuration de l'endpoint
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+
+            // Envoie de la requête
+            HttpResponseMessage response = await client.GetAsync($"/{user.Id}");
+
+            // Lecture de la réponse
+            if (response.Content != null)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                d = JsonConvert.DeserializeObject<Diary>(content);
+            }
+            
+            return d;
         }
 
-        public Task<Categories> ReadCategories()
+        public async Task<Categories> ReadCategories()
         {
-            throw new NotImplementedException();
+            Categories c = null;
+
+            // Configuration de l'endpoint
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+
+            // Envoie de la requête
+            HttpResponseMessage response = await client.GetAsync($"/categories");
+
+            // Lecture de la réponse
+            if (response.Content != null)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                c = JsonConvert.DeserializeObject<Categories>(content);
+            }
+
+            return c;
         }
     }
 }
