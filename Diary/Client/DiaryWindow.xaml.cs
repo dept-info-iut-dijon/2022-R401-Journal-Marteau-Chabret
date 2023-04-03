@@ -33,6 +33,7 @@ namespace Client
             Diary model = await net.GetDiary(student);
             DiaryViewModel d = new DiaryViewModel(model);
             this.DataContext = d;
+
         }
     }
 }

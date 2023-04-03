@@ -38,7 +38,11 @@ namespace Client.ViewModels
         /// <summary>
         /// Catégorie de couleur de l'entrée
         /// </summary>
-        public Brush CategoryColor { get => categoryColor; set => categoryColor = value; }
+        public Brush CategoryColor 
+        { 
+            get => categoryColor; 
+            set => categoryColor = value; 
+        }
 
         /// <summary>
         /// Catégorie Vue Model
@@ -53,6 +57,15 @@ namespace Client.ViewModels
         public EntryViewModel(Entry entry)
         {
             this.entry = entry;
+            this.date = this.entry.Date;
+            this.title = this.entry.Title;
+            this.desc = this.entry.Description;
+            this.category = new CategoryViewModel(this.entry.Category);
+        }
+
+        public override string ToString()
+        {
+            return this.entry.ToString();
         }
 
     }

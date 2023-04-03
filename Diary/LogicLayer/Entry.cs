@@ -40,6 +40,11 @@ namespace LogicLayer
         /// </summary>
         public Category Category { get => category; set => category = value; }
 
+        public override string ToString()
+        {
+            return this.category + " : " +this.title + " - " +this.description + " | " + this.date;
+        }
+
 
     }
 }
