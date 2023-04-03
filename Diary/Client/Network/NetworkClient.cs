@@ -16,7 +16,7 @@ namespace Client.Network
         {
             // Configuration de l'endpoint
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
             await client.PostAsync("", new StringContent(JsonConvert.SerializeObject(newEntry)));
@@ -28,10 +28,10 @@ namespace Client.Network
 
             // Configuration de l'endpoint
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
-            HttpResponseMessage response = await client.GetAsync($"/{user.Id}");
+            HttpResponseMessage response = await client.GetAsync($"{user.Id}");
 
             // Lecture de la réponse
             if (response.Content != null)
@@ -50,10 +50,10 @@ namespace Client.Network
 
             // Configuration de l'endpoint
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7277/diaries");
+            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
-            HttpResponseMessage response = await client.GetAsync($"/categories");
+            HttpResponseMessage response = await client.GetAsync("categories");
 
             // Lecture de la réponse
             if (response.Content != null)

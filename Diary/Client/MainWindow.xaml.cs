@@ -29,10 +29,10 @@ namespace Client
 
             // User
             userConnected = new User();
-            userConnected.Id = 1;
-            userConnected.Login = "dc393609";
-            userConnected.Password = "non";
-            userConnected.Name = "Damien";
+            userConnected.Id = 50;
+            userConnected.Login = "fm427410";
+            userConnected.Password = "fm427410";
+            userConnected.Name = "Marteau Florian";
 
 
         }
@@ -44,7 +44,7 @@ namespace Client
 
         private void OpenDiaryWindow(object sender, RoutedEventArgs e)
         {
-            DiaryWindow win = new DiaryWindow(userConnected, new FakeNetwork());
+            DiaryWindow win = new DiaryWindow(userConnected, new NetworkClient());
             win.Show();
         }
     }

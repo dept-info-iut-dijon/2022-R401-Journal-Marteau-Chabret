@@ -47,10 +47,10 @@ namespace Diary.Data
                 entry.Description = reader["desc"].ToString();
                 entry.Title = reader["title"].ToString();
                 entry.Date = Convert.ToDateTime(reader["date"]);
-                entry.IDiary1 = Convert.ToInt32(reader["IDDiary"]);
-                Category c = new Category(reader["name"].ToString(), Convert.ToInt32(reader["color"]));
+                entry.IDDiary = Convert.ToInt32(reader["IDDiary"]);
+                Category c = new Category(0,reader["name"].ToString(), Convert.ToInt32(reader["color"]));
                 entry.Category = c;
-                diary.Id = entry.IDiary1;
+                diary.Id = entry.IDDiary;
                 diary.Add(entry);
             }
 

@@ -20,7 +20,7 @@ namespace Client.ViewModels
         /// <summary>
         /// Couleure de la catégorie
         /// </summary>
-        public Brush CategoryColor
+        public Brush Color
         {
             get => color;
             set => color = value;
@@ -39,12 +39,6 @@ namespace Client.ViewModels
         public CategoryViewModel(Category model)
         {
             this.model = model;
-            byte r = (byte)((this.model.Color & 0xFF0000) >> 16);
-            byte g = (byte)((this.model.Color & 0x00FF00) >> 8);
-            byte b = (byte)(this.model.Color & 0x0000FF);
-            System.Drawing.Color color = System.Drawing.Color.FromArgb(r, g, b);
-            SolidColorBrush brush = new SolidColorBrush(color);
-
         }
 
         public override string ToString()
