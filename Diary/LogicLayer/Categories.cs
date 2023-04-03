@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LogicLayer
 {
+    /// <summary>
+    /// Liste des catégories
+    /// </summary>
     public class Categories
     {
 

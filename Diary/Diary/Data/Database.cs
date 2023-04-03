@@ -2,6 +2,9 @@
 
 namespace Diary.Data
 {
+    /// <summary>
+    /// Connexion à la base de donnée
+    /// </summary>
     public class Database
     {
         

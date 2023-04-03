@@ -9,3 +9,6 @@
 *.ncb
 *.log
 *.bin
+*.vsidx
+*.v2
+*.suo

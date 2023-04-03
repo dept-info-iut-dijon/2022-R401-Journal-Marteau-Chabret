@@ -16,6 +16,14 @@ namespace LogicLayer
         private int color;
 
         /// <summary>
+        /// Cosntructeur naturelle
+        /// </summary>
+        public Category()
+        {
+
+        }
+
+        /// <summary>
         /// Constructeur de la classe Category
         /// </summary>
         /// <param name="name">nom de la catégorie</param>
@@ -26,6 +34,12 @@ namespace LogicLayer
             this.name = name;
             this.color = color;
         }
+
+        /// <summary>
+        /// ID de la catégorie
+        /// </summary>
+        public int ID { get => id; set => id = value; }
+
         /// <summary>
         /// Représente le nom de la catégorie
         /// </summary>
