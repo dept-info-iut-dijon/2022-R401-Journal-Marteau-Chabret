@@ -23,9 +23,10 @@ namespace Diary.Data
         /// Récupère toutes les catégories
         /// </summary>
         /// <returns> une liste des catégories </returns>
-        public List<Category> GetAllCategories()
+        public Categories GetAllCategories()
         {
-            List<Category> categories = new List<Category>();
+            Categories categories = new Categories();
+            List<Category> categoriesList = new List<Category>();
 
             // Ouverture de la bdd
             this.database.Connection.Open();
@@ -41,9 +42,9 @@ namespace Diary.Data
                 int id = Convert.ToInt32(reader["id"].ToString());
                 string name = reader["name"].ToString();
                 int color = Convert.ToInt32(reader["color"].ToString());
-                categories.Add(new Category(id, name, color));
+                categoriesList.Add(new Category(id, name, color));
             }
-
+            categories.ListCategories = categoriesList;
             return categories;
 
         }

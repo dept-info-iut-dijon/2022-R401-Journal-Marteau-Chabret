@@ -47,7 +47,7 @@ namespace Client
         {
             Diary model = await net.GetDiary(student);
             Categories cat = await net.ReadCategories();
-            diaryViewModel = new DiaryViewModel(student,net);
+            diaryViewModel = new DiaryViewModel(model, cat,net);
             this.DataContext = diaryViewModel;
 
         }

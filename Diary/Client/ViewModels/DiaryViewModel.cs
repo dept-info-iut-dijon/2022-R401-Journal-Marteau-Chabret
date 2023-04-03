@@ -84,11 +84,10 @@ namespace Client.ViewModels
         /// </summary>
         /// <param name="user"> Utilisateur qui se connecte </param>
         /// <param name="network"> Network </param>
-        public DiaryViewModel(User u,INetworkClient net)
+        public DiaryViewModel(Diary d, Categories cat,INetworkClient net)
         {
             this.networkClient = net;
-            this.model = GetDiary(u).Result;
-            Categories categories = GetCategories().Result;
+            this.model =  d;
 
             Items = new ObservableCollection<EntryViewModel>();
             foreach(Entry e in model.Entries)
@@ -97,31 +96,13 @@ namespace Client.ViewModels
             }
 
             Categories = new ObservableCollection<CategoryViewModel>();
-            foreach (Category c in categories.ListCategories)
+            foreach (Category c in cat.ListCategories)
             {
                 Categories.Add(new CategoryViewModel(c));
             }
 
         }
 
-        /// <summary>
-        /// Permet d'obtenir le diary de l'user
-        /// </summary>
-        /// <param name="u">user</param>
-        /// <returns>diary</returns>
-        private async Task<Diary> GetDiary(User u)
-        {
-            return await networkClient.GetDiary(u);
-        }
-
-        /// <summary>
-        /// Permet d'obtenir les catégories
-        /// </summary>
-        /// <returns>catégories</returns>
-        private async Task<Categories> GetCategories()
-        {
-            return await networkClient.ReadCategories();
-        }
 
 
 
