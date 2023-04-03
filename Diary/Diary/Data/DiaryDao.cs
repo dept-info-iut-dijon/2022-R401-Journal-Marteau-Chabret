@@ -3,6 +3,9 @@ using System.Data.Common;
 
 namespace Diary.Data
 {
+    /// <summary>
+    /// Liaison avec la base de donnée pour le journal
+    /// </summary>
     public class DiaryDao
     {
         // Représente la bdd du journal

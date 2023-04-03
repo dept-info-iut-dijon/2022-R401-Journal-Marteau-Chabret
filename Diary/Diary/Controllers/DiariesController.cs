@@ -10,6 +10,7 @@ namespace Diary.Controllers
     {
         // Représente le dao pour accéder aux données
         private DiaryDao diaryDao = new DiaryDao(new Database());
+        private CategoryDao categoryDao = new CategoryDao(new Database());
 
         [HttpGet("testBdd")]
         public IActionResult TestBDD()
@@ -22,8 +23,7 @@ namespace Diary.Controllers
         public IActionResult ReadDiary(string id)
         {
             try
-            {
-                
+            {   
                 return new JsonResult(this.diaryDao.Read(new LogicLayer.User() { Id = Convert.ToInt32(id) }));
             }
             catch (Exception ex)
@@ -51,7 +51,14 @@ namespace Diary.Controllers
         [HttpGet("categories")]
         public IActionResult ReadCategories()
         {
-           return new NotFoundResult();
+            try
+            {
+                return new JsonResult(this.categoryDao.GetAllCategories());
+            }
+            catch(Exception ex)
+            {
+                return new NotFoundObjectResult(ex.Message);
+            }
         }
     }
 }
