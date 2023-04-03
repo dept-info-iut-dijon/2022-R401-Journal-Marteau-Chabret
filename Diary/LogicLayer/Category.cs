@@ -34,6 +34,12 @@ namespace LogicLayer
             this.name = name;
             this.color = color;
         }
+
+        /// <summary>
+        /// ID de la catégorie
+        /// </summary>
+        public int ID { get => id; set => id = value; }
+
         /// <summary>
         /// Représente le nom de la catégorie
         /// </summary>

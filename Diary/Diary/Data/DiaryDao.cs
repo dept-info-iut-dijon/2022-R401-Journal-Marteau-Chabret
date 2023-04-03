@@ -1,5 +1,6 @@
 ﻿using LogicLayer;
 using System.Data.Common;
+using System.Globalization;
 
 namespace Diary.Data
 {
@@ -57,16 +58,55 @@ namespace Diary.Data
                 diary.Add(entry);
             }
 
-
             return diary;
         }
+
         /// <summary>
         /// Permet d'ajouter un utilisateur et son journal dans la bdd
         /// </summary>
         /// <param name="entry">entrée à ajouter</param>
         public void AddEntry(Entry entry)
         {
+            // Ouverture de la bdd
+            this.database.Connection.Open();
 
+            // Création de la requête 
+            DbCommand command = this.database.Connection.CreateCommand();
+            command.CommandText = "insert into diaries.entry values(null, @date, @titre, @description, @idCategory, @idDiary);";
+
+            // Paramètre de la requête
+            DbParameter paramDate = command.CreateParameter();
+            paramDate.DbType = System.Data.DbType.Date;
+            paramDate.ParameterName = "@date";
+            paramDate.Value = entry.Date;
+            command.Parameters.Add(paramDate);
+
+            DbParameter paramTitre = command.CreateParameter();
+            paramTitre.DbType = System.Data.DbType.String;
+            paramTitre.ParameterName = "@titre";
+            paramTitre.Value = entry.Title;
+            command.Parameters.Add(paramTitre);
+
+            DbParameter paramDescription = command.CreateParameter();
+            paramDescription.DbType = System.Data.DbType.String;
+            paramDescription.ParameterName = "@description";
+            paramDescription.Value = entry.Description;
+            command.Parameters.Add(paramDescription);
+
+            DbParameter paramCategory = command.CreateParameter();
+            paramCategory.DbType = System.Data.DbType.Int32;
+            paramCategory.ParameterName = "@idCategory";
+            paramCategory.Value = entry.Category.ID;
+            command.Parameters.Add(paramCategory);
+
+            DbParameter paramDiary = command.CreateParameter();
+            paramDiary.DbType = System.Data.DbType.Int32;
+            paramDiary.ParameterName = "@idDiary";
+            paramDiary.Value = entry.IDDiary;
+            command.Parameters.Add(paramDiary);
+
+            // Exécute la requête
+            command.ExecuteNonQuery();
         }
     }
 }
