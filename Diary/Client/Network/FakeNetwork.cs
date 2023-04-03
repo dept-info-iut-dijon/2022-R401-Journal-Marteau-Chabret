@@ -26,21 +26,24 @@ namespace Client.Network
             entry.Description = "test du journal";
             entry.Date = DateTime.Today.AddDays(-1);
             entry.Title = "Titre 1";
-            entry.Category = new Category("Test", 12632256);
+            entry.Category = new Category(1, "Test", 12632256);
             diary.Add(entry);
             entry = new Entry();
             entry.IDDiary = diary.Id;
             entry.Description = "autre chose";
             entry.Date = DateTime.Today;
             entry.Title = "Titre 2";
-            entry.Category = new Category("Autre", 0x87CEEB);
+            entry.Category = new Category(2, "Autre", 0x87CEEB);
             diary.Add(entry);
             return diary;
         }
 
-        public Task<Categories> ReadCategories()
+        public async Task<Categories> ReadCategories()
         {
-            throw new NotImplementedException();
+            Categories categories = new Categories();
+            categories.Add(new Category(1, "Test", 12632256));
+            categories.Add(new Category(2, "Autre", 0x87CEEB));
+            return categories;
         }
     }
 }
