@@ -66,7 +66,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CurrentEntry.Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Margin="6" />
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CurrentEntry.Desc}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Margin="6" />
             <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Validate" Padding="4" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Validate"  />
         </Grid>
     </Grid>
