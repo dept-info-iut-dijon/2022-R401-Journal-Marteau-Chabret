@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Client.ViewModels
 {
@@ -17,7 +18,8 @@ namespace Client.ViewModels
         private EntryViewModel current;
         private Diary model;
         private ObservableCollection<EntryViewModel> items;
-        private List<CategoryViewModel> categories;
+        private ObservableCollection<CategoryViewModel> categories;
+        private INetworkClient networkClient;
 
         /// <summary>
         /// Journal 
@@ -40,29 +42,89 @@ namespace Client.ViewModels
         /// <summary>
         /// Liste des catégories
         /// </summary>
-        public List<CategoryViewModel> Categories
+        public ObservableCollection<CategoryViewModel> Categories
         {
             get => categories;
             set => categories = value;  
         }
-       
+
+        /// <summary>
+        /// Entry selectionnée
+        /// </summary>
+        public EntryViewModel CurrentEntry 
+        { 
+            get => current;
+            set { 
+                current = value;
+                NotifyPropertyChanged("Visible");
+                NotifyPropertyChanged("CurrentEntry");
+
+            } 
+        }
+
+        /// <summary>
+        /// Renvoie si la modification du journal est visible ou pas
+        /// </summary>
+        public Visibility Visible
+        {
+            get
+            {
+                Visibility visibility = Visibility.Hidden;
+                if (current != null)
+                {
+                    visibility = Visibility.Visible;
+                    
+                }
+                return visibility;
+            }
+        }
 
         /// <summary>
         /// Constructeur naturelle
         /// </summary>
         /// <param name="user"> Utilisateur qui se connecte </param>
         /// <param name="network"> Network </param>
-        public DiaryViewModel(Diary model)
+        public DiaryViewModel(User u,INetworkClient net)
         {
-
-            this.model = model;
+            this.networkClient = net;
+            this.model = GetDiary(u).Result;
+            Categories categories = GetCategories().Result;
 
             Items = new ObservableCollection<EntryViewModel>();
             foreach(Entry e in model.Entries)
             {
                 Items.Add(new EntryViewModel(e));
             }
+
+            Categories = new ObservableCollection<CategoryViewModel>();
+            foreach (Category c in categories.ListCategories)
+            {
+                Categories.Add(new CategoryViewModel(c));
+            }
+
         }
+
+        /// <summary>
+        /// Permet d'obtenir le diary de l'user
+        /// </summary>
+        /// <param name="u">user</param>
+        /// <returns>diary</returns>
+        private async Task<Diary> GetDiary(User u)
+        {
+            return await networkClient.GetDiary(u);
+        }
+
+        /// <summary>
+        /// Permet d'obtenir les catégories
+        /// </summary>
+        /// <returns>catégories</returns>
+        private async Task<Categories> GetCategories()
+        {
+            return await networkClient.ReadCategories();
+        }
+
+
+
 
         /// <summary>
         /// Créer une entrée
@@ -85,6 +147,14 @@ namespace Client.ViewModels
         /// </summary>
         public void AddEntry()
         {
+            Entry e = new Entry();
+            e.IDDiary = this.Model.Id;
+            this.model.Add(e);
+
+            // Modification Vue
+            EntryViewModel entryVM = new EntryViewModel(e);
+            this.Items.Add(entryVM);
+            this.CurrentEntry = entryVM;
 
         }
 
@@ -93,7 +163,8 @@ namespace Client.ViewModels
         /// </summary>
         public void SaveEntry()
         {
-
+            networkClient.AddEntry(this.CurrentEntry.Entry);
+            this.CurrentEntry = null;
         }
     }
 }

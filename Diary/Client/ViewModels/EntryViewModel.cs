@@ -42,11 +42,16 @@ namespace Client.ViewModels
         { 
             get 
             {
-                byte r = (byte)((this.entry.Category.Color & 0xFF0000) >> 16);
-                byte g = (byte)((this.entry.Category.Color & 0x00FF00) >> 8);
-                byte b = (byte)(this.entry.Category.Color & 0x0000FF);
-                System.Windows.Media.Color color = System.Windows.Media.Color.FromArgb(255, r, g, b);
-                Brush brush = new SolidColorBrush(color);
+                Brush brush = new SolidColorBrush(Colors.Transparent);
+                if (this.entry.Category != null)
+                {
+                    byte r = (byte)((this.entry.Category.Color & 0xFF0000) >> 16);
+                    byte g = (byte)((this.entry.Category.Color & 0x00FF00) >> 8);
+                    byte b = (byte)(this.entry.Category.Color & 0x0000FF);
+                    System.Windows.Media.Color color = System.Windows.Media.Color.FromArgb(255, r, g, b);
+                     brush = new SolidColorBrush(color);
+                }
+                
                 return brush; 
             }
         
@@ -56,8 +61,15 @@ namespace Client.ViewModels
         /// <summary>
         /// Catégorie Vue Model
         /// </summary>
-        public CategoryViewModel Category { get => category; set => category = value; }
-      
+        public CategoryViewModel Category 
+        { 
+            get => category;
+            set { category = value;
+            }
+        }
+
+        public Entry Entry { get => entry; set => entry = value; }
+
 
         /// <summary>
         /// Constructeur naturelle

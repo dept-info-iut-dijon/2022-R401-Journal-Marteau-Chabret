@@ -17,7 +17,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Diary entries :" VerticalAlignment="Bottom"/>
+            <Label FontWeight="Bold" Grid.Row="0" Content="Diary entries :" VerticalAlignment="Bottom"/>
             <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding Items}" SelectedItem="{Binding CurrentEntry}" HorizontalContentAlignment="Stretch" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -34,7 +34,40 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Grid.Row="2" Content="create" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="4" />
+            <Button Grid.Row="2" Content="create" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="4" Click="CreateEntry" />
+        </Grid>
+        <Grid Grid.Column="1" Visibility="{Binding Visible}" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Entry details" FontWeight="Bold" HorizontalAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Date :" HorizontalAlignment="Right" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Title :" HorizontalAlignment="Right" />
+            <Label Grid.Row="3" Grid.Column="0" Content="Category :" HorizontalAlignment="Right" />
+            <Label Grid.Row="4" Grid.Column="0" Content="Description :" HorizontalAlignment="Right" />
+            <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding CurrentEntry.Date}" HorizontalAlignment="Stretch" Margin="6" />
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentEntry.Title}" HorizontalAlignment="Stretch" Margin="6" />
+            <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Categories}" SelectedItem="{Binding CurrentEntry.Category}" HorizontalAlignment="Stretch" Margin="6" HorizontalContentAlignment="Stretch"  >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="10" Height="10" Fill="{Binding Color}" />
+                            <Label Content="{Binding Name}"  Margin="0,-4,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CurrentEntry.Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Margin="6" />
+            <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Validate" Padding="4" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Validate"  />
         </Grid>
     </Grid>
 </Window>

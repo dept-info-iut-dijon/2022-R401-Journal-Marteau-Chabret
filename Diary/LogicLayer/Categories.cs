@@ -9,7 +9,7 @@ namespace LogicLayer
     public class Categories
     {
 
-        private List<Category> categories;
+        private List<Category> categories = new List<Category>();
 
         /// <summary>
         /// Représente les différentes catégories

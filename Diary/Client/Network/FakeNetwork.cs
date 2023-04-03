@@ -13,9 +13,10 @@ namespace Client.Network
     /// </summary>
     public class FakeNetwork : INetworkClient
     {
+
         public void AddEntry(Entry newEntry)
         {
-            throw new NotImplementedException();
+
         }
 
         public async Task<Diary> GetDiary(User user)
@@ -45,5 +46,6 @@ namespace Client.Network
             categories.Add(new Category(2, "Autre", 0x87CEEB));
             return categories;
         }
+
     }
 }

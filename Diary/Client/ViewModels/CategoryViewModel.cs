@@ -22,7 +22,15 @@ namespace Client.ViewModels
         /// </summary>
         public Brush Color
         {
-            get => color;
+            get
+            {
+                byte r = (byte)((this.model.Color & 0xFF0000) >> 16);
+                byte g = (byte)((this.model.Color & 0x00FF00) >> 8);
+                byte b = (byte)(this.model.Color & 0x0000FF);
+                System.Windows.Media.Color color = System.Windows.Media.Color.FromArgb(255, r, g, b);
+                Brush brush = new SolidColorBrush(color);
+                return brush;
+            }
             set => color = value;
         }
 
@@ -32,10 +40,14 @@ namespace Client.ViewModels
         /// </summary>
         public string Name
         {
-            get => name;
+            get => model.Name;
             set => name = value;
         }
 
+        /// <summary>
+        /// Constructeur du vue modele Catégorie
+        /// </summary>
+        /// <param name="model">Catégorie servant de base</param>
         public CategoryViewModel(Category model)
         {
             this.model = model;
@@ -49,9 +61,7 @@ namespace Client.ViewModels
         public override bool Equals(object? obj)
         {
             return obj is CategoryViewModel model &&
-                   EqualityComparer<Category>.Default.Equals(this.model, model.model) &&
-                   EqualityComparer<Brush>.Default.Equals(color, model.color) &&
-                   name == model.name;
+                   this.model.Equals(model.model); 
         }
     }
 }
