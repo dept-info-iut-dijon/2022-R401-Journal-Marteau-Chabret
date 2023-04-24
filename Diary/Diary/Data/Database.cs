@@ -22,7 +22,7 @@ namespace Diary.Data
         {
             connection = new MySqlConnection("server=srv-iq-etu;database=diaries;uid=iq2;pwd=iq2");
         }
-
+             
         /// <summary>
         /// Permet de tester la connection au serveur
         /// </summary>
