@@ -35,7 +35,7 @@ namespace Diary.Data
 
             // Création de la requête
             DbCommand command = this.database.Connection.CreateCommand();
-            command.CommandText = "Select IDDiary,category.id,category.name,color,entry.date,title,entry.desc from entry natural join diary inner join category on entry.IDCategory = category.ID where IDUser =@id";
+            command.CommandText = "Select IDDiary,category.id,category.name,color,entry.date,title,entry.desc from entry innner join diary on entry.IDDiary = diary.ID inner join category on entry.IDCategory = category.ID where IDUser =@id";
 
             DbParameter param = command.CreateParameter();
             param.DbType = System.Data.DbType.Int32;

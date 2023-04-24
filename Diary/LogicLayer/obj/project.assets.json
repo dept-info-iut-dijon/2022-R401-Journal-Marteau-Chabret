@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\flo21\\.nuget\\packages\\": {}
+    "C:\\Users\\Damien\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj",
       "projectName": "LogicLayer",
-      "projectPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj",
-      "packagesPath": "C:\\Users\\flo21\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\obj\\",
+      "projectPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj",
+      "packagesPath": "C:\\Users\\Damien\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\flo21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Damien\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

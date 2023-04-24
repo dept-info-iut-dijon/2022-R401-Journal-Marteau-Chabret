@@ -33,8 +33,6 @@ namespace Client
             userConnected.Login = "fm427410";
             userConnected.Password = "fm427410";
             userConnected.Name = "Marteau Florian";
-
-
         }
 
         private void Boutton_Click(object sender, RoutedEventArgs e)
