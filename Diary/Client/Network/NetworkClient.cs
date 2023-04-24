@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,10 +17,11 @@ namespace Client.Network
         {
             // Configuration de l'endpoint
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
+            //client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
-            await client.PostAsync("", new StringContent(JsonConvert.SerializeObject(newEntry)));
+            HttpResponseMessage response = await client.PostAsJsonAsync<Entry>("https://localhost:7277/diaries/AddEntry", newEntry);
+            
         }
 
         public async Task<Diary> GetDiary(User user)

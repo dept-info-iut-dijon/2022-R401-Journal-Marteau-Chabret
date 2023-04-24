@@ -13,7 +13,7 @@ namespace LogicLayer
         private DateTime date;
         private string title;
         private string description;
-        private Int32 idDiary;
+        private int idDiary;
 
         /// <summary>
         /// Représente la date de l'entry

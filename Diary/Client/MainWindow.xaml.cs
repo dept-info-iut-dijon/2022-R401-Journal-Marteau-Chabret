@@ -42,7 +42,7 @@ namespace Client
 
         private void OpenDiaryWindow(object sender, RoutedEventArgs e)
         {
-            DiaryWindow win = new DiaryWindow(userConnected, new FakeNetwork());
+            DiaryWindow win = new DiaryWindow(userConnected, new NetworkClient());
             win.Show();
         }
     }

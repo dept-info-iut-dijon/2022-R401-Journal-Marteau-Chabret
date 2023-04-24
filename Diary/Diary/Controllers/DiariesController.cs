@@ -60,7 +60,7 @@ namespace Diary.Controllers
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult(ex.Message);
+                return new OkResult();
             }
             
         }

@@ -5,14 +5,10 @@
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         }
       },
       "LogicLayer/1.0.0": {
@@ -71,23 +67,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Damien\\.nuget\\packages\\": {}
+    "C:\\Users\\flo21\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Damien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\Client\\obj\\",
+      "projectPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\flo21\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Damien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\flo21\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -97,8 +93,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj": {
-              "projectPath": "C:\\Users\\Damien\\Documents\\COURS\\ArchitectureLogicielle\\TP_Journal\\Diary\\LogicLayer\\LogicLayer.csproj"
+            "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj": {
+              "projectPath": "C:\\Users\\flo21\\OneDrive\\Bureau\\TP Journal\\2022-R401-Journal-Marteau-Chabret\\Diary\\LogicLayer\\LogicLayer.csproj"
             }
           }
         }
@@ -124,8 +120,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -137,7 +132,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
