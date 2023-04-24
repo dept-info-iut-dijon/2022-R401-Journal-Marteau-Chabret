@@ -94,7 +94,7 @@ namespace Client.ViewModels
             {
                 Items.Add(new EntryViewModel(e));
             }
-
+            
             Categories = new ObservableCollection<CategoryViewModel>();
             foreach (Category c in cat.ListCategories)
             {
@@ -136,6 +136,7 @@ namespace Client.ViewModels
             EntryViewModel entryVM = new EntryViewModel(e);
             this.Items.Add(entryVM);
             this.CurrentEntry = entryVM;
+
 
         }
 

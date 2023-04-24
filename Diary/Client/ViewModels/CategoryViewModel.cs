@@ -16,7 +16,6 @@ namespace Client.ViewModels
     {
         private Category model;
 
-        private Brush color;
         /// <summary>
         /// Couleure de la catégorie
         /// </summary>
@@ -31,7 +30,6 @@ namespace Client.ViewModels
                 Brush brush = new SolidColorBrush(color);
                 return brush;
             }
-            set => color = value;
         }
 
         private string name;
@@ -43,6 +41,7 @@ namespace Client.ViewModels
             get => model.Name;
             set => name = value;
         }
+        public Category Model { get => model; set => model = value; }
 
         /// <summary>
         /// Constructeur du vue modele Catégorie

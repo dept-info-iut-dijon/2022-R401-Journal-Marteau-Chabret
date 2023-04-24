@@ -44,7 +44,7 @@ namespace Client
 
         private void OpenDiaryWindow(object sender, RoutedEventArgs e)
         {
-            DiaryWindow win = new DiaryWindow(userConnected, new NetworkClient());
+            DiaryWindow win = new DiaryWindow(userConnected, new FakeNetwork());
             win.Show();
         }
     }

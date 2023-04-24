@@ -17,23 +17,45 @@ namespace Client.ViewModels
         private DateTime date;
         private string title;
         private string desc;
-        private Brush categoryColor;
         private CategoryViewModel category;
 
         /// <summary>
         /// Date de l'entrée
         /// </summary>
-        public DateTime Date { get => date; set => date = value; }
+        public DateTime Date
+        {
+            get { return date; }
+            set
+            {
+                date = value;
+                NotifyPropertyChanged("Date");
+            }
+        }
 
         /// <summary>
         /// Titre de l'entrée
         /// </summary>
-        public string Title { get => title; set => title = value; }
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                title = value;
+                NotifyPropertyChanged("Title");
+            }
+        }
 
         /// <summary>
         /// Description de l'entrée
         /// </summary>
-        public string Desc { get => desc; set => desc = value; }
+        public string Desc
+        {
+            get { return desc; }
+            set
+            {
+                desc = value;
+            }
+        }
 
         /// <summary>
         /// Catégorie de couleur de l'entrée
@@ -55,7 +77,6 @@ namespace Client.ViewModels
                 return brush; 
             }
         
-            set => categoryColor = value; 
         }
 
         /// <summary>
@@ -64,7 +85,11 @@ namespace Client.ViewModels
         public CategoryViewModel Category 
         { 
             get => category;
-            set { category = value;
+            set 
+            {
+                category = value;
+                this.entry.Category = category.Model;
+                NotifyPropertyChanged("CategoryColor");
             }
         }
 
