@@ -17,7 +17,6 @@ namespace Client.Network
         {
             // Configuration de l'endpoint
             HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
             HttpResponseMessage response = await client.PostAsJsonAsync<Entry>("https://localhost:7277/diaries/AddEntry", newEntry);

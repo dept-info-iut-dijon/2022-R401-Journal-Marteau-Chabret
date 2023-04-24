@@ -27,6 +27,7 @@ namespace Client.ViewModels
             get { return date; }
             set
             {
+                this.entry.Date = value;
                 date = value;
                 NotifyPropertyChanged("Date");
             }
@@ -40,6 +41,7 @@ namespace Client.ViewModels
             get { return title; }
             set
             {
+                this.entry.Title = value;
                 title = value;
                 NotifyPropertyChanged("Title");
             }
@@ -53,6 +55,7 @@ namespace Client.ViewModels
             get { return desc; }
             set
             {
+                this.entry.Description = value;
                 desc = value;
             }
         }
