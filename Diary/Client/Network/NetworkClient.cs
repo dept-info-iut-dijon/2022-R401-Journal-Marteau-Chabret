@@ -16,10 +16,9 @@ namespace Client.Network
     {
 
         /// <summary>
-        /// Représente l'url de base de l'API
+        /// Url de base
         /// </summary>
         private string baseUri = "https://localhost:7277/diaries/";
-
 
         public async void AddEntry(Entry newEntry)
         {
@@ -36,19 +35,18 @@ namespace Client.Network
             Diary d = null;
 
             // Configuration de l'endpoint
-            RestClient client = new RestClient();
-
-            // Création requête
-            RestRequest request = new RestRequest($"{user.Id}");
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
 
             // Envoie de la requête
-            RestResponse response = await client.ExecuteAsync(request);
+            HttpResponseMessage response = await client.GetAsync($"{user.Id}");
 
             // Lecture de la réponse
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (response.Content != null)
             {
-                string responseContent = response.Content;
-                d = JsonConvert.DeserializeObject<Diary>(responseContent);
+                var content = await response.Content.ReadAsStringAsync();
+
+                d = JsonConvert.DeserializeObject<Diary>(content);
             }
             
             return d;
@@ -76,29 +74,28 @@ namespace Client.Network
             return c;
         }
 
-        public async Task<Student> GetStudent(string login,string password)
+
+        public async Task<Student> GetStudent(string login, string password)
         {
+
+            User u = new User();
+            u.Login = login;
+            u.Password = password;
+
             Student s = null;
 
             // Configuration de l'endpoint
-            RestClient client = new RestClient("https://localhost:7277/diaries/");
-
-            RestRequest request = new RestRequest("login", Method.Post);
-
-            // Ajouter les paramètres à la requête
-            request.AddParameter("login", login);
-            request.AddParameter("password", password);
+            HttpClient client = new HttpClient();
 
             // Envoie de la requête
-            RestResponse response = await client.ExecuteAsync(request);
-
+            HttpResponseMessage response = await client.PostAsJsonAsync<User>("https://localhost:7277/diaries/login", u);
 
             // Lecture de la réponse
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if ( response.StatusCode == System.Net.HttpStatusCode.OK && response.Content != null)
             {
-                string responseContent = response.Content;
-                s = JsonConvert.DeserializeObject<Student>(responseContent);
+                var content = await response.Content.ReadAsStringAsync();
 
+                s = JsonConvert.DeserializeObject<Student>(content);
             }
 
             // Vérification de la réponse
