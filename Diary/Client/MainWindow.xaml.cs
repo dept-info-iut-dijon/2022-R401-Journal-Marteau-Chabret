@@ -1,4 +1,5 @@
 ﻿using Client.Network;
+using Client.ViewModels;
 using LogicLayer;
 using System;
 using System.Collections.Generic;
@@ -22,28 +23,46 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        /// <summary>
+        /// Représente l'étudiant qui est connecté
+        /// </summary>
         private User userConnected;
+
+        /// <summary>
+        /// Permet d'accéder à l'api
+        /// </summary>
+        private INetworkClient networkClient;
+
+        /// <summary>
+        /// Constructeur de la mainwindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-
-            // User
-            userConnected = new User();
-            userConnected.Id = 50;
-            userConnected.Login = "fm427410";
-            userConnected.Password = "fm427410";
-            userConnected.Name = "Marteau Florian";
+            this.networkClient = new FakeNetwork();
         }
 
-        private void Boutton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void OpenDiaryWindow(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Permet de se connecter au diary de l'étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Connexion(object sender, RoutedEventArgs e)
         {
-            DiaryWindow win = new DiaryWindow(userConnected, new NetworkClient());
-            win.Show();
+            try
+            {
+                Student student = await networkClient.GetStudent(this.login.Text,this.password.Password);
+                this.userConnected = student;
+                DiaryWindow win = new DiaryWindow(userConnected, networkClient);
+                win.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

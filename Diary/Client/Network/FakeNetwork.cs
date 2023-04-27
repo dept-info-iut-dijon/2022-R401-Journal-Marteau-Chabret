@@ -47,5 +47,18 @@ namespace Client.Network
             return categories;
         }
 
+
+
+        public async Task<Student> GetStudent(string login, string password)
+        {
+            Student resStudent = new Student();
+            resStudent.Login = login;
+            resStudent.Password = password;
+            resStudent.Role = UserRoles.STUDENT;
+            resStudent.Name = "Florian";
+            return resStudent;
+
+        }
+
     }
 }
