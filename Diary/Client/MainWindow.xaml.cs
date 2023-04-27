@@ -40,7 +40,7 @@ namespace Client
         public MainWindow()
         {
             InitializeComponent();
-            this.networkClient = new FakeNetwork();
+            this.networkClient = new NetworkClient();
         }
 
 
