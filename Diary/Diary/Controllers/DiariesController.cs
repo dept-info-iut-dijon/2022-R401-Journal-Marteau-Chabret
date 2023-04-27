@@ -1,5 +1,6 @@
 ﻿using Diary.Data;
 using LogicLayer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diary.Controllers
@@ -14,6 +15,7 @@ namespace Diary.Controllers
         // Représente les dao pour accéder aux données
         private DiaryDao diaryDao = new DiaryDao(new Database());
         private CategoryDao categoryDao = new CategoryDao(new Database());
+        private UserDao userDao = new UserDao(new Database());
 
         /// <summary>
         /// Teste la connexion avec la base de donnée
@@ -60,7 +62,7 @@ namespace Diary.Controllers
             }
             catch (Exception ex)
             {
-                return new OkResult();
+                return new BadRequestResult();
             }
             
         }
@@ -79,6 +81,25 @@ namespace Diary.Controllers
             catch(Exception ex)
             {
                 return new NotFoundObjectResult(ex.Message);
+            }
+        }
+
+        [HttpPost("login")]
+        public IActionResult GetStudent(string login, string password)
+        {
+            try
+            {
+                IActionResult actionResult = new ForbidResult();
+                Student student = this.userDao.GetStudent(login, password);
+                if (student != null)
+                {
+                    actionResult =  new JsonResult(student);
+                }
+                return actionResult;
+            }
+            catch(Exception ex)
+            {
+                return new BadRequestResult();
             }
         }
     }
