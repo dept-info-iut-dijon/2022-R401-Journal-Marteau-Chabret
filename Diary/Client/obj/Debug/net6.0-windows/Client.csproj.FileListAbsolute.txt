@@ -52,3 +52,7 @@ C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diar
 C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\obj\Debug\net6.0-windows\ref\Client.dll
 C:\Users\Damien\Documents\COURS\ArchitectureLogicielle\TP_Journal\Diary\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\RestSharp.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\flo21\OneDrive\Bureau\TP Journal\2022-R401-Journal-Marteau-Chabret\Diary\Client\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

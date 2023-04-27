@@ -1,6 +1,7 @@
 ﻿using Client.ViewModels;
 using LogicLayer;
 using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,13 @@ namespace Client.Network
 {
     public class NetworkClient : INetworkClient
     {
+
+        /// <summary>
+        /// Représente l'url de base de l'API
+        /// </summary>
+        private string baseUri = "https://localhost:7277/diaries/";
+
+
         public async void AddEntry(Entry newEntry)
         {
             // Configuration de l'endpoint
@@ -28,18 +36,19 @@ namespace Client.Network
             Diary d = null;
 
             // Configuration de l'endpoint
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7277/diaries/");
+            RestClient client = new RestClient();
+
+            // Création requête
+            RestRequest request = new RestRequest($"{user.Id}");
 
             // Envoie de la requête
-            HttpResponseMessage response = await client.GetAsync($"{user.Id}");
+            RestResponse response = await client.ExecuteAsync(request);
 
             // Lecture de la réponse
-            if (response.Content != null)
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                var content = await response.Content.ReadAsStringAsync();
-
-                d = JsonConvert.DeserializeObject<Diary>(content);
+                string responseContent = response.Content;
+                d = JsonConvert.DeserializeObject<Diary>(responseContent);
             }
             
             return d;
@@ -65,6 +74,33 @@ namespace Client.Network
             }
 
             return c;
+        }
+
+        public async Task<Student> GetStudent(string login,string password)
+        {
+            Student s = null;
+
+            // Configuration de l'endpoint
+            RestClient client = new RestClient("https://localhost:7277/diaries/");
+
+            RestRequest request = new RestRequest("login", Method.Post);
+
+            // Ajouter les paramètres à la requête
+            request.AddParameter("login", login);
+            request.AddParameter("password", password);
+
+            // Envoie de la requête
+            RestResponse response = await client.ExecuteAsync(request);
+
+
+            // Lecture de la réponse
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string responseContent = response.Content;
+                s = JsonConvert.DeserializeObject<Student>(responseContent);
+            }
+
+            return s;
         }
     }
 }
