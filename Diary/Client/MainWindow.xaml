@@ -16,10 +16,10 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Row="4" x:Name="Boutton" Content="Connexion" Click="Connexion" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40"/>
-        <TextBox Grid.Row="1" x:Name="login" VerticalAlignment="Top" HorizontalAlignment="Center" Width="400" Height="40" />
+        <TextBox FontSize="20" Grid.Row="1" x:Name="login" VerticalAlignment="Top" HorizontalAlignment="Center" Width="400" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <Label Grid.Row="0" Content="Login" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
 
-        <PasswordBox Grid.Row="3" x:Name="password" VerticalAlignment="Top" HorizontalAlignment="Center" Width="400" Height="40" />
+        <PasswordBox FontSize="20" Grid.Row="3" x:Name="password" VerticalAlignment="Top" HorizontalAlignment="Center" Width="400" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
         <Label Grid.Row="2" Content="Password" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
     </Grid>
 </Window>
