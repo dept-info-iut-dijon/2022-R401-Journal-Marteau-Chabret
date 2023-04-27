@@ -57,7 +57,7 @@ namespace Diary.Data
                 student.Id = Convert.ToInt32(reader["ID"]);
                 student.Login = reader["login"].ToString(); ;
                 student.Password = reader["password"].ToString();
-                // student.Password = reader["passhash"].ToString();
+                //student.Password = reader["passhash"].ToString();
                 student.Name = reader["name"].ToString(); ;
                 student.Role = (UserRoles)Convert.ToInt32(reader["role"])-1;
             }
