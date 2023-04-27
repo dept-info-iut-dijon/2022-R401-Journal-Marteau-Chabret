@@ -85,12 +85,12 @@ namespace Diary.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult GetStudent(string login, string password)
+        public IActionResult GetStudent(User u)
         {
             try
             {
                 IActionResult actionResult = new ForbidResult();
-                Student student = this.userDao.GetStudent(login, password);
+                Student student = this.userDao.GetStudent(u.Login, u.Password);
                 if (student != null)
                 {
                     actionResult =  new JsonResult(student);
