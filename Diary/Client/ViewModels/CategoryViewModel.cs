@@ -32,14 +32,12 @@ namespace Client.ViewModels
             }
         }
 
-        private string name;
         /// <summary>
         /// Nom de la catégorie
         /// </summary>
         public string Name
         {
             get => model.Name;
-            set => name = value;
         }
         public Category Model { get => model; set => model = value; }
 
