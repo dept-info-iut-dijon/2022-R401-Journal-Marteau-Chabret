@@ -90,7 +90,7 @@ namespace Diary.Controllers
             try
             {
                 IActionResult actionResult = new ForbidResult();
-                Student student = this.userDao.GetStudent(u.Login, u.Password);
+                Student student = this.userDao.GetStudent(u.Login, new Hash().HashStringToSHA256(u.Password));
                 if (student != null)
                 {
                     actionResult =  new JsonResult(student);
