@@ -80,6 +80,7 @@ namespace Client.Network
 
             User u = new User();
             u.Login = login;
+            u.Name = "tets";
             u.Password = password;
 
             Student s = null;
