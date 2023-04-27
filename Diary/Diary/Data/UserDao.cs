@@ -33,7 +33,7 @@ namespace Diary.Data
             this.database.Connection.Open();
             // Création de la requête
             DbCommand command = this.database.Connection.CreateCommand();
-            command.CommandText = "select ID, login, password, name, role, passhash from user where login=@log and password=@pass";
+            command.CommandText = "select ID, login, passhash, name, role, passhash from user where login=@log and passhash=@pass";
 
             // Param 1 : Login
             DbParameter param = command.CreateParameter();
@@ -56,8 +56,8 @@ namespace Diary.Data
                 student = new Student();
                 student.Id = Convert.ToInt32(reader["ID"]);
                 student.Login = reader["login"].ToString(); ;
-                student.Password = reader["password"].ToString();
-                //student.Password = reader["passhash"].ToString();
+                //student.Password = reader["password"].ToString();
+                student.Password = reader["passhash"].ToString();
                 student.Name = reader["name"].ToString(); ;
                 student.Role = (UserRoles)Convert.ToInt32(reader["role"])-1;
             }

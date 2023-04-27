@@ -24,14 +24,18 @@ namespace LogicLayer
         /// <returns> le nouveau texte à hashé </returns>
         public string HashStringToSHA256(string text)
         {
-            // Transforme le string en byte
+            // Transforme le string en tableau de byte
             byte[] tab = Encoding.UTF8.GetBytes(text);
 
-            // Hash le tableaud de byte
-            byte[] hashTab = SHA256.HashData(tab);
+            // Hash le tableau de byte
+            byte[] hashTab;
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                hashTab = sha256.ComputeHash(tab);
+            }
 
-            // Converti en chaine héxadécimale
-            return BitConverter.ToString(tab).Replace("-", "");
+            // Converti en chaîne héxadécimale
+            return BitConverter.ToString(hashTab).Replace("-", "");
         }
     }
 }
