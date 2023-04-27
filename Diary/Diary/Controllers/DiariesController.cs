@@ -99,7 +99,7 @@ namespace Diary.Controllers
             }
             catch(Exception ex)
             {
-                return new BadRequestResult();
+                return new OkResult();
             }
         }
     }
