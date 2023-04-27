@@ -78,10 +78,12 @@ namespace Client.Network
         public async Task<Student> GetStudent(string login, string password)
         {
 
+            Hash h = new Hash();
+
             User u = new User();
             u.Login = login;
             u.Name = "tets";
-            u.Password = password;
+            u.Password = h.HashStringToSHA256(password);
 
             Student s = null;
 
