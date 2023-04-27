@@ -98,6 +98,17 @@ namespace Client.Network
             {
                 string responseContent = response.Content;
                 s = JsonConvert.DeserializeObject<Student>(responseContent);
+
+            }
+
+            // Vérification de la réponse
+            if (s == null)
+            {
+                throw new Exception("Bad login or mdp");
+            }
+            if (s.Role != UserRoles.STUDENT)
+            {
+                throw new Exception("That's not a student");
             }
 
             return s;
